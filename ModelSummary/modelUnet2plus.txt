@@ -1,0 +1,350 @@
+Model: "UNetPP"
+__________________________________________________________________________________________________
+ Layer (type)                   Output Shape         Param #     Connected to                     
+==================================================================================================
+ input_6 (InputLayer)           [(None, 256, 256, 3  0           []                               
+                                )]                                                                
+                                                                                                  
+ conv2d_868 (Conv2D)            (None, 256, 256, 32  896         ['input_6[0][0]']                
+                                )                                                                 
+                                                                                                  
+ batch_normalization_335 (Batch  (None, 256, 256, 32  128        ['conv2d_868[0][0]']             
+ Normalization)                 )                                                                 
+                                                                                                  
+ leaky_re_lu (LeakyReLU)        (None, 256, 256, 32  0           ['batch_normalization_335[0][0]']
+                                )                                                                 
+                                                                                                  
+ conv2d_869 (Conv2D)            (None, 256, 256, 32  9248        ['leaky_re_lu[0][0]']            
+                                )                                                                 
+                                                                                                  
+ batch_normalization_336 (Batch  (None, 256, 256, 32  128        ['conv2d_869[0][0]']             
+ Normalization)                 )                                                                 
+                                                                                                  
+ leaky_re_lu_1 (LeakyReLU)      (None, 256, 256, 32  0           ['batch_normalization_336[0][0]']
+                                )                                                                 
+                                                                                                  
+ max_pooling2d_15 (MaxPooling2D  (None, 128, 128, 32  0          ['leaky_re_lu_1[0][0]']          
+ )                              )                                                                 
+                                                                                                  
+ conv2d_870 (Conv2D)            (None, 128, 128, 64  18496       ['max_pooling2d_15[0][0]']       
+                                )                                                                 
+                                                                                                  
+ batch_normalization_337 (Batch  (None, 128, 128, 64  256        ['conv2d_870[0][0]']             
+ Normalization)                 )                                                                 
+                                                                                                  
+ leaky_re_lu_2 (LeakyReLU)      (None, 128, 128, 64  0           ['batch_normalization_337[0][0]']
+                                )                                                                 
+                                                                                                  
+ dropout_24 (Dropout)           (None, 128, 128, 64  0           ['leaky_re_lu_2[0][0]']          
+                                )                                                                 
+                                                                                                  
+ conv2d_871 (Conv2D)            (None, 128, 128, 64  36928       ['dropout_24[0][0]']             
+                                )                                                                 
+                                                                                                  
+ batch_normalization_338 (Batch  (None, 128, 128, 64  256        ['conv2d_871[0][0]']             
+ Normalization)                 )                                                                 
+                                                                                                  
+ leaky_re_lu_3 (LeakyReLU)      (None, 128, 128, 64  0           ['batch_normalization_338[0][0]']
+                                )                                                                 
+                                                                                                  
+ max_pooling2d_16 (MaxPooling2D  (None, 64, 64, 64)  0           ['leaky_re_lu_3[0][0]']          
+ )                                                                                                
+                                                                                                  
+ conv2d_874 (Conv2D)            (None, 64, 64, 128)  73856       ['max_pooling2d_16[0][0]']       
+                                                                                                  
+ batch_normalization_341 (Batch  (None, 64, 64, 128)  512        ['conv2d_874[0][0]']             
+ Normalization)                                                                                   
+                                                                                                  
+ leaky_re_lu_6 (LeakyReLU)      (None, 64, 64, 128)  0           ['batch_normalization_341[0][0]']
+                                                                                                  
+ conv2d_875 (Conv2D)            (None, 64, 64, 128)  147584      ['leaky_re_lu_6[0][0]']          
+                                                                                                  
+ batch_normalization_342 (Batch  (None, 64, 64, 128)  512        ['conv2d_875[0][0]']             
+ Normalization)                                                                                   
+                                                                                                  
+ leaky_re_lu_7 (LeakyReLU)      (None, 64, 64, 128)  0           ['batch_normalization_342[0][0]']
+                                                                                                  
+ max_pooling2d_17 (MaxPooling2D  (None, 32, 32, 128)  0          ['leaky_re_lu_7[0][0]']          
+ )                                                                                                
+                                                                                                  
+ conv2d_880 (Conv2D)            (None, 32, 32, 256)  295168      ['max_pooling2d_17[0][0]']       
+                                                                                                  
+ batch_normalization_347 (Batch  (None, 32, 32, 256)  1024       ['conv2d_880[0][0]']             
+ Normalization)                                                                                   
+                                                                                                  
+ leaky_re_lu_12 (LeakyReLU)     (None, 32, 32, 256)  0           ['batch_normalization_347[0][0]']
+                                                                                                  
+ dropout_25 (Dropout)           (None, 32, 32, 256)  0           ['leaky_re_lu_12[0][0]']         
+                                                                                                  
+ conv2d_881 (Conv2D)            (None, 32, 32, 256)  590080      ['dropout_25[0][0]']             
+                                                                                                  
+ batch_normalization_348 (Batch  (None, 32, 32, 256)  1024       ['conv2d_881[0][0]']             
+ Normalization)                                                                                   
+                                                                                                  
+ leaky_re_lu_13 (LeakyReLU)     (None, 32, 32, 256)  0           ['batch_normalization_348[0][0]']
+                                                                                                  
+ max_pooling2d_18 (MaxPooling2D  (None, 16, 16, 256)  0          ['leaky_re_lu_13[0][0]']         
+ )                                                                                                
+                                                                                                  
+ conv2d_888 (Conv2D)            (None, 16, 16, 512)  1180160     ['max_pooling2d_18[0][0]']       
+                                                                                                  
+ batch_normalization_355 (Batch  (None, 16, 16, 512)  2048       ['conv2d_888[0][0]']             
+ Normalization)                                                                                   
+                                                                                                  
+ leaky_re_lu_20 (LeakyReLU)     (None, 16, 16, 512)  0           ['batch_normalization_355[0][0]']
+                                                                                                  
+ conv2d_889 (Conv2D)            (None, 16, 16, 512)  2359808     ['leaky_re_lu_20[0][0]']         
+                                                                                                  
+ batch_normalization_356 (Batch  (None, 16, 16, 512)  2048       ['conv2d_889[0][0]']             
+ Normalization)                                                                                   
+                                                                                                  
+ leaky_re_lu_21 (LeakyReLU)     (None, 16, 16, 512)  0           ['batch_normalization_356[0][0]']
+                                                                                                  
+ conv2d_transpose_17 (Conv2DTra  (None, 32, 32, 256)  524544     ['leaky_re_lu_21[0][0]']         
+ nspose)                                                                                          
+                                                                                                  
+ concatenate_35 (Concatenate)   (None, 32, 32, 512)  0           ['conv2d_transpose_17[0][0]',    
+                                                                  'leaky_re_lu_13[0][0]']         
+                                                                                                  
+ conv2d_transpose_14 (Conv2DTra  (None, 64, 64, 32)  32800       ['leaky_re_lu_13[0][0]']         
+ nspose)                                                                                          
+                                                                                                  
+ conv2d_890 (Conv2D)            (None, 32, 32, 256)  1179904     ['concatenate_35[0][0]']         
+                                                                                                  
+ concatenate_32 (Concatenate)   (None, 64, 64, 160)  0           ['leaky_re_lu_7[0][0]',          
+                                                                  'conv2d_transpose_14[0][0]']    
+                                                                                                  
+ conv2d_transpose_12 (Conv2DTra  (None, 128, 128, 32  16416      ['leaky_re_lu_7[0][0]']          
+ nspose)                        )                                                                 
+                                                                                                  
+ batch_normalization_357 (Batch  (None, 32, 32, 256)  1024       ['conv2d_890[0][0]']             
+ Normalization)                                                                                   
+                                                                                                  
+ conv2d_882 (Conv2D)            (None, 64, 64, 32)   46112       ['concatenate_32[0][0]']         
+                                                                                                  
+ concatenate_30 (Concatenate)   (None, 128, 128, 96  0           ['leaky_re_lu_3[0][0]',          
+                                )                                 'conv2d_transpose_12[0][0]']    
+                                                                                                  
+ conv2d_transpose_11 (Conv2DTra  (None, 256, 256, 32  8224       ['leaky_re_lu_3[0][0]']          
+ nspose)                        )                                                                 
+                                                                                                  
+ leaky_re_lu_22 (LeakyReLU)     (None, 32, 32, 256)  0           ['batch_normalization_357[0][0]']
+                                                                                                  
+ batch_normalization_349 (Batch  (None, 64, 64, 32)  128         ['conv2d_882[0][0]']             
+ Normalization)                                                                                   
+                                                                                                  
+ conv2d_876 (Conv2D)            (None, 128, 128, 32  27680       ['concatenate_30[0][0]']         
+                                )                                                                 
+                                                                                                  
+ concatenate_29 (Concatenate)   (None, 256, 256, 64  0           ['leaky_re_lu_1[0][0]',          
+                                )                                 'conv2d_transpose_11[0][0]']    
+                                                                                                  
+ conv2d_891 (Conv2D)            (None, 32, 32, 256)  590080      ['leaky_re_lu_22[0][0]']         
+                                                                                                  
+ leaky_re_lu_14 (LeakyReLU)     (None, 64, 64, 32)   0           ['batch_normalization_349[0][0]']
+                                                                                                  
+ batch_normalization_343 (Batch  (None, 128, 128, 32  128        ['conv2d_876[0][0]']             
+ Normalization)                 )                                                                 
+                                                                                                  
+ conv2d_872 (Conv2D)            (None, 256, 256, 32  18464       ['concatenate_29[0][0]']         
+                                )                                                                 
+                                                                                                  
+ batch_normalization_358 (Batch  (None, 32, 32, 256)  1024       ['conv2d_891[0][0]']             
+ Normalization)                                                                                   
+                                                                                                  
+ conv2d_883 (Conv2D)            (None, 64, 64, 32)   9248        ['leaky_re_lu_14[0][0]']         
+                                                                                                  
+ leaky_re_lu_8 (LeakyReLU)      (None, 128, 128, 32  0           ['batch_normalization_343[0][0]']
+                                )                                                                 
+                                                                                                  
+ batch_normalization_339 (Batch  (None, 256, 256, 32  128        ['conv2d_872[0][0]']             
+ Normalization)                 )                                                                 
+                                                                                                  
+ leaky_re_lu_23 (LeakyReLU)     (None, 32, 32, 256)  0           ['batch_normalization_358[0][0]']
+                                                                                                  
+ batch_normalization_350 (Batch  (None, 64, 64, 32)  128         ['conv2d_883[0][0]']             
+ Normalization)                                                                                   
+                                                                                                  
+ conv2d_877 (Conv2D)            (None, 128, 128, 32  9248        ['leaky_re_lu_8[0][0]']          
+                                )                                                                 
+                                                                                                  
+ leaky_re_lu_4 (LeakyReLU)      (None, 256, 256, 32  0           ['batch_normalization_339[0][0]']
+                                )                                                                 
+                                                                                                  
+ conv2d_transpose_18 (Conv2DTra  (None, 64, 64, 128)  131200     ['leaky_re_lu_23[0][0]']         
+ nspose)                                                                                          
+                                                                                                  
+ leaky_re_lu_15 (LeakyReLU)     (None, 64, 64, 32)   0           ['batch_normalization_350[0][0]']
+                                                                                                  
+ batch_normalization_344 (Batch  (None, 128, 128, 32  128        ['conv2d_877[0][0]']             
+ Normalization)                 )                                                                 
+                                                                                                  
+ conv2d_873 (Conv2D)            (None, 256, 256, 32  9248        ['leaky_re_lu_4[0][0]']          
+                                )                                                                 
+                                                                                                  
+ concatenate_36 (Concatenate)   (None, 64, 64, 288)  0           ['conv2d_transpose_18[0][0]',    
+                                                                  'leaky_re_lu_7[0][0]',          
+                                                                  'leaky_re_lu_15[0][0]']         
+                                                                                                  
+ leaky_re_lu_9 (LeakyReLU)      (None, 128, 128, 32  0           ['batch_normalization_344[0][0]']
+                                )                                                                 
+                                                                                                  
+ conv2d_transpose_15 (Conv2DTra  (None, 128, 128, 32  4128       ['leaky_re_lu_15[0][0]']         
+ nspose)                        )                                                                 
+                                                                                                  
+ batch_normalization_340 (Batch  (None, 256, 256, 32  128        ['conv2d_873[0][0]']             
+ Normalization)                 )                                                                 
+                                                                                                  
+ conv2d_892 (Conv2D)            (None, 64, 64, 128)  331904      ['concatenate_36[0][0]']         
+                                                                                                  
+ concatenate_33 (Concatenate)   (None, 128, 128, 12  0           ['leaky_re_lu_3[0][0]',          
+                                8)                                'leaky_re_lu_9[0][0]',          
+                                                                  'conv2d_transpose_15[0][0]']    
+                                                                                                  
+ leaky_re_lu_5 (LeakyReLU)      (None, 256, 256, 32  0           ['batch_normalization_340[0][0]']
+                                )                                                                 
+                                                                                                  
+ conv2d_transpose_13 (Conv2DTra  (None, 256, 256, 32  4128       ['leaky_re_lu_9[0][0]']          
+ nspose)                        )                                                                 
+                                                                                                  
+ batch_normalization_359 (Batch  (None, 64, 64, 128)  512        ['conv2d_892[0][0]']             
+ Normalization)                                                                                   
+                                                                                                  
+ conv2d_884 (Conv2D)            (None, 128, 128, 32  36896       ['concatenate_33[0][0]']         
+                                )                                                                 
+                                                                                                  
+ concatenate_31 (Concatenate)   (None, 256, 256, 96  0           ['leaky_re_lu_1[0][0]',          
+                                )                                 'leaky_re_lu_5[0][0]',          
+                                                                  'conv2d_transpose_13[0][0]']    
+                                                                                                  
+ leaky_re_lu_24 (LeakyReLU)     (None, 64, 64, 128)  0           ['batch_normalization_359[0][0]']
+                                                                                                  
+ batch_normalization_351 (Batch  (None, 128, 128, 32  128        ['conv2d_884[0][0]']             
+ Normalization)                 )                                                                 
+                                                                                                  
+ conv2d_878 (Conv2D)            (None, 256, 256, 32  27680       ['concatenate_31[0][0]']         
+                                )                                                                 
+                                                                                                  
+ conv2d_893 (Conv2D)            (None, 64, 64, 128)  147584      ['leaky_re_lu_24[0][0]']         
+                                                                                                  
+ leaky_re_lu_16 (LeakyReLU)     (None, 128, 128, 32  0           ['batch_normalization_351[0][0]']
+                                )                                                                 
+                                                                                                  
+ batch_normalization_345 (Batch  (None, 256, 256, 32  128        ['conv2d_878[0][0]']             
+ Normalization)                 )                                                                 
+                                                                                                  
+ batch_normalization_360 (Batch  (None, 64, 64, 128)  512        ['conv2d_893[0][0]']             
+ Normalization)                                                                                   
+                                                                                                  
+ conv2d_885 (Conv2D)            (None, 128, 128, 32  9248        ['leaky_re_lu_16[0][0]']         
+                                )                                                                 
+                                                                                                  
+ leaky_re_lu_10 (LeakyReLU)     (None, 256, 256, 32  0           ['batch_normalization_345[0][0]']
+                                )                                                                 
+                                                                                                  
+ leaky_re_lu_25 (LeakyReLU)     (None, 64, 64, 128)  0           ['batch_normalization_360[0][0]']
+                                                                                                  
+ batch_normalization_352 (Batch  (None, 128, 128, 32  128        ['conv2d_885[0][0]']             
+ Normalization)                 )                                                                 
+                                                                                                  
+ conv2d_879 (Conv2D)            (None, 256, 256, 32  9248        ['leaky_re_lu_10[0][0]']         
+                                )                                                                 
+                                                                                                  
+ conv2d_transpose_19 (Conv2DTra  (None, 128, 128, 64  32832      ['leaky_re_lu_25[0][0]']         
+ nspose)                        )                                                                 
+                                                                                                  
+ leaky_re_lu_17 (LeakyReLU)     (None, 128, 128, 32  0           ['batch_normalization_352[0][0]']
+                                )                                                                 
+                                                                                                  
+ batch_normalization_346 (Batch  (None, 256, 256, 32  128        ['conv2d_879[0][0]']             
+ Normalization)                 )                                                                 
+                                                                                                  
+ concatenate_37 (Concatenate)   (None, 128, 128, 19  0           ['conv2d_transpose_19[0][0]',    
+                                2)                                'leaky_re_lu_3[0][0]',          
+                                                                  'leaky_re_lu_9[0][0]',          
+                                                                  'leaky_re_lu_17[0][0]']         
+                                                                                                  
+ leaky_re_lu_11 (LeakyReLU)     (None, 256, 256, 32  0           ['batch_normalization_346[0][0]']
+                                )                                                                 
+                                                                                                  
+ conv2d_transpose_16 (Conv2DTra  (None, 256, 256, 32  4128       ['leaky_re_lu_17[0][0]']         
+ nspose)                        )                                                                 
+                                                                                                  
+ conv2d_894 (Conv2D)            (None, 128, 128, 64  110656      ['concatenate_37[0][0]']         
+                                )                                                                 
+                                                                                                  
+ concatenate_34 (Concatenate)   (None, 256, 256, 12  0           ['leaky_re_lu_1[0][0]',          
+                                8)                                'leaky_re_lu_5[0][0]',          
+                                                                  'leaky_re_lu_11[0][0]',         
+                                                                  'conv2d_transpose_16[0][0]']    
+                                                                                                  
+ batch_normalization_361 (Batch  (None, 128, 128, 64  256        ['conv2d_894[0][0]']             
+ Normalization)                 )                                                                 
+                                                                                                  
+ conv2d_886 (Conv2D)            (None, 256, 256, 32  36896       ['concatenate_34[0][0]']         
+                                )                                                                 
+                                                                                                  
+ leaky_re_lu_26 (LeakyReLU)     (None, 128, 128, 64  0           ['batch_normalization_361[0][0]']
+                                )                                                                 
+                                                                                                  
+ batch_normalization_353 (Batch  (None, 256, 256, 32  128        ['conv2d_886[0][0]']             
+ Normalization)                 )                                                                 
+                                                                                                  
+ conv2d_895 (Conv2D)            (None, 128, 128, 64  36928       ['leaky_re_lu_26[0][0]']         
+                                )                                                                 
+                                                                                                  
+ leaky_re_lu_18 (LeakyReLU)     (None, 256, 256, 32  0           ['batch_normalization_353[0][0]']
+                                )                                                                 
+                                                                                                  
+ batch_normalization_362 (Batch  (None, 128, 128, 64  256        ['conv2d_895[0][0]']             
+ Normalization)                 )                                                                 
+                                                                                                  
+ conv2d_887 (Conv2D)            (None, 256, 256, 32  9248        ['leaky_re_lu_18[0][0]']         
+                                )                                                                 
+                                                                                                  
+ leaky_re_lu_27 (LeakyReLU)     (None, 128, 128, 64  0           ['batch_normalization_362[0][0]']
+                                )                                                                 
+                                                                                                  
+ batch_normalization_354 (Batch  (None, 256, 256, 32  128        ['conv2d_887[0][0]']             
+ Normalization)                 )                                                                 
+                                                                                                  
+ conv2d_transpose_20 (Conv2DTra  (None, 256, 256, 32  8224       ['leaky_re_lu_27[0][0]']         
+ nspose)                        )                                                                 
+                                                                                                  
+ leaky_re_lu_19 (LeakyReLU)     (None, 256, 256, 32  0           ['batch_normalization_354[0][0]']
+                                )                                                                 
+                                                                                                  
+ concatenate_38 (Concatenate)   (None, 256, 256, 16  0           ['conv2d_transpose_20[0][0]',    
+                                0)                                'leaky_re_lu_1[0][0]',          
+                                                                  'leaky_re_lu_5[0][0]',          
+                                                                  'leaky_re_lu_11[0][0]',         
+                                                                  'leaky_re_lu_19[0][0]']         
+                                                                                                  
+ conv2d_896 (Conv2D)            (None, 256, 256, 32  46112       ['concatenate_38[0][0]']         
+                                )                                                                 
+                                                                                                  
+ batch_normalization_363 (Batch  (None, 256, 256, 32  128        ['conv2d_896[0][0]']             
+ Normalization)                 )                                                                 
+                                                                                                  
+ leaky_re_lu_28 (LeakyReLU)     (None, 256, 256, 32  0           ['batch_normalization_363[0][0]']
+                                )                                                                 
+                                                                                                  
+ conv2d_897 (Conv2D)            (None, 256, 256, 32  9248        ['leaky_re_lu_28[0][0]']         
+                                )                                                                 
+                                                                                                  
+ batch_normalization_364 (Batch  (None, 256, 256, 32  128        ['conv2d_897[0][0]']             
+ Normalization)                 )                                                                 
+                                                                                                  
+ leaky_re_lu_29 (LeakyReLU)     (None, 256, 256, 32  0           ['batch_normalization_364[0][0]']
+                                )                                                                 
+                                                                                                  
+ dropout_26 (Dropout)           (None, 256, 256, 32  0           ['leaky_re_lu_29[0][0]']         
+                                )                                                                 
+                                                                                                  
+ conv2d_898 (Conv2D)            (None, 256, 256, 1)  33          ['dropout_26[0][0]']             
+                                                                                                  
+==================================================================================================
+Total params: 8,193,825
+Trainable params: 8,187,169
+Non-trainable params: 6,656
+__________________________________________________________________________________________________
